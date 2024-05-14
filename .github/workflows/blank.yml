@@ -5,9 +5,10 @@ name: CI
 # Controls when the workflow will run
 on:
   workflow_dispatch:
-
-  # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
+    inputs:
+        environment:
+            required: true
+            default: dev
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,7 +30,7 @@ jobs:
         uses: Azure/powershell@v2
         with:
           azPSVersion: latest
-          inlineScript: ./task-8/deploy_script.ps1
+          inlineScript: ./task-8/deploy_script.ps1 ${{ github.event.inputs.environment }}
 
           # If this is true, this task will fail if any errors are written to the error pipeline, or if any data is written to the Standard Error stream.
           failOnStandardError: true
