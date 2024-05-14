@@ -32,7 +32,7 @@ jobs:
         uses: Azure/powershell@v2
         with:
           azPSVersion: latest
-          inlineScript: ./ps_task.ps1
+          inlineScript: ./task-8/deploy_script.ps1
 
           # If this is true, this task will fail if any errors are written to the error pipeline, or if any data is written to the Standard Error stream.
           failOnStandardError: true
