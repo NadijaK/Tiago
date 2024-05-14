@@ -28,4 +28,4 @@ jobs:
       - name: Run a one-line script
         shell: pwsh
         run: |
-          ./Task 8/deploy_script.ps1
+          & "./Task 8/deploy_script.ps1"
