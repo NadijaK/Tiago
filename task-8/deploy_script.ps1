@@ -1,1 +1,2 @@
-echo "Test"
+param ($environment)
+echo "Deploying for environment: $environment"
